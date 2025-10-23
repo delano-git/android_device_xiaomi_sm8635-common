@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-25 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Dolby Atmos -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_enable">Usar Dolby Atmos</string>
+    <string name="dolby_profile_title">Escolher um perfil</string>
+    <string name="dolby_preset">Equalizador gráfico</string>
+    <string name="dolby_off">Desligado</string>
+    <string name="dolby_on">Ligado</string>
+    <string name="dolby_low">Baixo</string>
+    <string name="dolby_medium">Médio</string>
+    <string name="dolby_high">Alto</string>
+    <string name="dolby_max">Máximo</string>
+    <string name="dolby_unknown">Desconhecido</string>
+    <string name="dolby_on_with_profile">Ligado (%1$s)</string>
+    <string name="dolby_category_settings">Configurações</string>
+    <string name="dolby_category_adv_settings">Configurações avançadas</string>
+    <string name="dolby_adv_settings_footer">Escolha um perfil diferente para mostrar as configurações avançadas.</string>
+    <string name="dolby_bass_enhancer">Reforço de graves</string>
+    <string name="dolby_dialogue_enhancer">Reforço de diálogos</string>
+    <string name="dolby_spk_virtualizer">Virtualização de alto-falantes</string>
+    <string name="dolby_hp_virtualizer">Virtualização de fones de ouvido</string>
+    <string name="dolby_volume_leveler">Nivelador de volume</string>
+    <string name="dolby_bass_enhancer_summary">Realça sons de baixa frequência para graves mais intensos</string>  
+    <string name="dolby_dialogue_enhancer_summary">Melhora a clareza de diálogos e vozes</string>  
+    <string name="dolby_spk_virtualizer_summary">Simula um efeito surround virtual em alto-falantes</string>  
+    <string name="dolby_hp_virtualizer_summary">Simula um efeito surround virtual em fones de ouvido</string>  
+    <string name="dolby_volume_leveler_summary">Mantém o volume equilibrado para uma experiência consistente</string>  
+    <string name="dolby_connect_headphones">Conecte os fones de ouvido</string>
+    <string name="dolby_reset_all">Redefinir perfis</string>
+    <string name="dolby_reset_all_message">Isso redefinirá todos os perfis para os padrões de fábrica.</string>
+    <string name="dolby_reset_all_toast">Perfis redefinidos com sucesso</string>
+    <string name="dolby_hp_virtualizer_dolby_strength">Intensidade da virtualização surround</string>
+    <string name="dolby_dialogue_enhancer_dolby_strength">Intensidade do reforço de diálogos</string>
+
+    <!-- Dolby profiles -->
+    <string name="dolby_profile_dynamic">Dinâmico</string>
+    <string name="dolby_profile_movie">Filmes</string>
+    <string name="dolby_profile_music">Músicas</string>
+    <string name="dolby_profile_custom">Personalizado</string>
+
+    <!-- Dolby equalizer presets -->
+    <string name="dolby_preset_default">Plano (desligado)</string>
+    <string name="dolby_preset_rock">Rock</string>
+    <string name="dolby_preset_jazz">Jazz</string>
+    <string name="dolby_preset_pop">Pop</string>
+    <string name="dolby_preset_classical">Clássico</string>
+    <string name="dolby_preset_hiphop">Hip Hop</string>
+    <string name="dolby_preset_blues">Blues</string>
+    <string name="dolby_preset_electronic">Eletrônico</string>
+    <string name="dolby_preset_country">Country</string>
+    <string name="dolby_preset_dance">Dance</string>
+    <string name="dolby_preset_metal">Metal</string>
+    <string name="dolby_preset_custom">Personalizado</string>
+
+    <!-- Dolby equalizer UI -->
+    <string name="dolby_geq_slider_label_gain">Ganhos</string>
+    <string name="dolby_geq_preset">Predefinição</string>
+    <string name="dolby_geq_preset_name">Nome da predefinição</string>
+    <string name="dolby_geq_new_preset">Nova predefinição</string>
+    <string name="dolby_geq_rename_preset">Renomear predefinição</string>
+    <string name="dolby_geq_delete_preset">Excluir predefinição</string>
+    <string name="dolby_geq_delete_preset_prompt">Deseja excluir esta predefinição?</string>
+    <string name="dolby_geq_reset_gains">Redefinir ganhos</string>
+    <string name="dolby_geq_reset_gains_prompt">Deseja redefinir esta predefinição para os padrões?</string>
+    <string name="dolby_geq_preset_name_exists">O nome da predefinição já existe!</string>
+    <string name="dolby_geq_preset_name_too_long">O nome da predefinição é muito longo!</string>
+
+    <!-- Dolby intelligent EQ -->
+    <string name="dolby_ieq">Equalizador inteligente</string>
+    <string name="dolby_detailed">Detalhado</string>
+    <string name="dolby_balanced">Equilibrado</string>
+    <string name="dolby_warm">Encorpado</string>
+
+</resources>
