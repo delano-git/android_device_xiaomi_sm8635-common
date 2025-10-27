@@ -260,7 +260,8 @@ PRODUCT_CHARACTERISTICS := nosdcard,tablet
 
 # QSPA
 PRODUCT_PACKAGES += \
-    vendor.qti.qspa-service
+    vendor.qti.qspa-service \
+    qspa_vendor.rc
 
 # Radio
 PRODUCT_PACKAGES += \
