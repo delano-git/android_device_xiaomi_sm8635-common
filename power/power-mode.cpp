@@ -73,4 +73,24 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
 }  // namespace power
 }  // namespace hardware
 }  // namespace android
+
+namespace google {
+namespace hardware {
+namespace power {
+namespace impl {
+namespace pixel {
+
+bool isDeviceSpecificModeSupported(::aidl::android::hardware::power::Mode type, bool* _aidl_return) {
+    return ::aidl::android::hardware::power::impl::isDeviceSpecificModeSupported(type, _aidl_return);
+}
+
+bool setDeviceSpecificMode(::aidl::android::hardware::power::Mode type, bool enabled) {
+    return ::aidl::android::hardware::power::impl::setDeviceSpecificMode(type, enabled);
+}
+
+}  // namespace pixel
+}  // namespace impl
+}  // namespace power
+}  // namespace hardware
+}  // namespace google
 }  // namespace aidl
