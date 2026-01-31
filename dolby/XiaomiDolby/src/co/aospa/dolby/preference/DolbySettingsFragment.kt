@@ -138,8 +138,9 @@ class DolbySettingsFragment : SettingsBasePreferenceFragment (),
             onPreferenceChangeListener = this@DolbySettingsFragment
             min = requireContext().resources.getInteger(R.integer.stereo_widening_min)
             max = requireContext().resources.getInteger(R.integer.stereo_widening_max)
-            sliderIncrement = 1
+            sliderIncrement = 6
             setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS)
+            setTickVisible(true)
             setUpdatesContinuously(true)
         }
         dialoguePref.onPreferenceChangeListener = this
@@ -149,6 +150,7 @@ class DolbySettingsFragment : SettingsBasePreferenceFragment (),
             max = requireContext().resources.getInteger(R.integer.dialogue_enhancer_max)
             sliderIncrement = 1
             setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS)
+            setTickVisible(true)
             setUpdatesContinuously(true)
         }
         bassPref.onPreferenceChangeListener = this
