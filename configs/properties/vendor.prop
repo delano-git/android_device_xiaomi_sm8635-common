@@ -39,6 +39,14 @@ vendor.audio.volume.headset.gain.depcal=true
 vendor.qc2audio.per_frame.flac.dec.enabled=true
 vendor.qc2audio.suspend.enabled=true
 
+# Dolby
+persist.vendor.audio_fx.current=dolby
+persist.vendor.audio.effectimplenter=dolby
+persist.vendor.audio.dolby.tws_tuning=true
+ro.vendor.dolby.dax.version=DAX3_3.12.0.8_r1
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
+
 # Bluetooth
 bluetooth.auto_connect_profiles.enabled=true
 bluetooth.profile.a2dp.source.enabled=true
