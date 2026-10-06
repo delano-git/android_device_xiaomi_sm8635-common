@@ -160,9 +160,6 @@ class PenService : Service() {
             return@firstOrNull isXiaomiPenDevice(it)
         } != null
 
-        val targetPeak = 120f
-        val targetMin = if (isPenConnected) 120f else 60f
-
         val currentPeak = try {
             Settings.System.getFloat(contentResolver, PEAK_REFRESH_RATE)
         } catch (e: Exception) {
@@ -174,17 +171,35 @@ class PenService : Service() {
             -1f
         }
 
-        if (currentPeak != targetPeak) {
-            Settings.System.putFloat(contentResolver, PEAK_REFRESH_RATE, targetPeak)
-        }
-        if (currentMin != targetMin) {
-            Settings.System.putFloat(contentResolver, MIN_REFRESH_RATE, targetMin)
-        }
-
         if (isPenConnected) {
-            if (!lastOverrideRefreshRateStatus) registerOverrideRefreshRate()
-        } else if (!isPenConnected && lastOverrideRefreshRateStatus) {
-            if (lastOverrideRefreshRateStatus) unregisterOverrideRefreshRate()
+            if (!lastOverrideRefreshRateStatus) {
+                if (currentPeak > 0f) savedPeakRefreshRate = currentPeak
+                if (currentMin >= 0f) savedMinRefreshRate = currentMin
+                registerOverrideRefreshRate()
+            }
+            if (currentPeak != 120f) {
+                Settings.System.putFloat(contentResolver, PEAK_REFRESH_RATE, 120f)
+            }
+            if (currentMin != 120f) {
+                Settings.System.putFloat(contentResolver, MIN_REFRESH_RATE, 120f)
+            }
+        } else if (lastOverrideRefreshRateStatus) {
+            unregisterOverrideRefreshRate()
+            val defaultPeak = try {
+                resources.getInteger(com.android.internal.R.integer.config_defaultPeakRefreshRate).toFloat()
+            } catch (e: Exception) {
+                0f
+            }
+            val peakToRestore = savedPeakRefreshRate ?: defaultPeak
+            if (peakToRestore > 0f && currentPeak != peakToRestore) {
+                Settings.System.putFloat(contentResolver, PEAK_REFRESH_RATE, peakToRestore)
+            }
+            val minToRestore = savedMinRefreshRate ?: 60f
+            if (minToRestore >= 0f && currentMin != minToRestore) {
+                Settings.System.putFloat(contentResolver, MIN_REFRESH_RATE, minToRestore)
+            }
+            savedPeakRefreshRate = null
+            savedMinRefreshRate = null
         }
     }
 
@@ -262,5 +277,7 @@ class PenService : Service() {
         private const val NOTIFICATION_ID = 1000
 
         private var lastOverrideRefreshRateStatus = false
+        private var savedPeakRefreshRate: Float? = null
+        private var savedMinRefreshRate: Float? = null
     }
 }
