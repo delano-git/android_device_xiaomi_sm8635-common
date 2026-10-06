@@ -6,11 +6,11 @@
 <resources>
 
     <!-- Stereo widening amount -->
-    <integer name="stereo_widening_min">4</integer>
+    <integer name="stereo_widening_min">0</integer>
     <integer name="stereo_widening_max">64</integer>
 
     <!-- Dialogue enhancer amount -->
-    <integer name="dialogue_enhancer_min">1</integer>
+    <integer name="dialogue_enhancer_min">0</integer>
     <integer name="dialogue_enhancer_max">12</integer>
 
 </resources>

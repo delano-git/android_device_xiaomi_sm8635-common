@@ -113,7 +113,7 @@ class DolbySettingsFragment : SettingsBasePreferenceFragment (),
 
         stereoPref = findPreference<SliderPreference>(PREF_STEREO_WIDENING)!!
         if (!requireContext().resources.getBoolean(R.bool.dolby_stereo_widening_supported)) {
-            settingsCategory.removePreference(stereoPref!!)
+            advSettingsCategory.removePreference(stereoPref!!)
             stereoPref = null
         }
 
@@ -138,9 +138,9 @@ class DolbySettingsFragment : SettingsBasePreferenceFragment (),
             onPreferenceChangeListener = this@DolbySettingsFragment
             min = requireContext().resources.getInteger(R.integer.stereo_widening_min)
             max = requireContext().resources.getInteger(R.integer.stereo_widening_max)
-            sliderIncrement = 6
+            sliderIncrement = 1
             setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS)
-            setTickVisible(true)
+            setTickVisible(false)
             setUpdatesContinuously(true)
         }
         dialoguePref.onPreferenceChangeListener = this
@@ -283,10 +283,14 @@ class DolbySettingsFragment : SettingsBasePreferenceFragment (),
 
         dialoguePref.isChecked = dolbyController.getDialogueEnhancerEnabled(currentProfile)
         dialogueAmountPref.value = dolbyController.getDialogueEnhancerAmount(currentProfile)
+            .coerceIn(dialogueAmountPref.min, dialogueAmountPref.max)
         spkVirtPref.isChecked = dolbyController.getSpeakerVirtEnabled(currentProfile)
         volumePref?.isChecked = dolbyController.getVolumeLevelerEnabled(currentProfile)
         hpVirtPref.isChecked = dolbyController.getHeadphoneVirtEnabled(currentProfile)
-        stereoPref?.value = dolbyController.getStereoWideningAmount(currentProfile)
+        stereoPref?.let {
+            it.value = dolbyController.getStereoWideningAmount(currentProfile)
+                .coerceIn(it.min, it.max)
+        }
     }
 
     companion object {
