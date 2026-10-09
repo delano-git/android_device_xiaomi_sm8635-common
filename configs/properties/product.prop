@@ -27,5 +27,4 @@ remote_provisioning.enable_rkpd=true
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # Surfaceflinger
-debug.sf.disable_backpressure=1
 persist.sys.sf_charge_anim_supported=true
