@@ -118,7 +118,6 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libawcal.so;DUMMY_SHARED_LIB
 odm/lib64/libcorn.so
-odm/lib64/libcrussp.so
 odm/lib64/libmace.so
 odm/lib64/libmars.so
 odm/lib64/libonnxruntime.so
@@ -154,7 +153,6 @@ vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdsd2pcm.so
-vendor/lib64/libkaraokepal.so
 vendor/lib64/libmcs.so
 vendor/lib64/libmis6.so
 vendor/lib64/libmisoundsa.so

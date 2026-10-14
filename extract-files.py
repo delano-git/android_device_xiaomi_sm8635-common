@@ -56,14 +56,6 @@ lib_fixups: lib_fixups_user_type = {
         'android.hardware.graphics.composer3-V2-ndk',
         'vendor.qti.hardware.display.composer3-V1-ndk',
     ): lib_fixup_remove,
-    (
-        'libagm',
-        'libar-acdb',
-        'libar-pal',
-        'libats',
-        'liblx-osal',
-        'libpalclient',
-    ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
@@ -170,7 +162,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libbinder_shim.so'),
     (
         'odm/lib64/libaudioroute_ext.so',
-        'vendor/lib64/libkaraokepal.so',
         'vendor/lib64/libmcs.so',
     ): blob_fixup()
         .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
