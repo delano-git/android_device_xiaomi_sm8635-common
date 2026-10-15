@@ -16,5 +16,8 @@ type vendor_sysfs_ssr_coredump_toggle, fs_type, sysfs_type;
 # Dolby
 type vendor_dolby_file, data_file_type, file_type;
 
+# Touch
+type vendor_data_touchreport_file, data_file_type, file_type;
+
 # Walt
 type proc_walt, fs_type, proc_type;

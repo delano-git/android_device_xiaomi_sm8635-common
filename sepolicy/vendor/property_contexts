@@ -8,5 +8,13 @@ vendor.camera.sensor.                u:object_r:vendor_camera_sensor_prop:s0
 vendor.sys.thermal.bcl.boot_completed    u:object_r:vendor_thermal_normal_prop:s0
 vendor.sys.thermal.data.path             u:object_r:vendor_thermal_normal_prop:s0
 
+# Panel
+vendor.panel.    u:object_r:vendor_panel_info_prop:s0
+
 # Touchfeature
-persist.vendor.hostprocess.    u:object_r:vendor_touch_hostprocess_prop:s0
+persist.vendor.hostprocess.            u:object_r:vendor_touch_hostprocess_prop:s0
+vendor.touchfeature.                   u:object_r:vendor_touchfeature_prop:s0
+ro.vendor.touchfeature.type            u:object_r:vendor_touchfeature_prop:s0
+persist.vendor.touchfeature.           u:object_r:vendor_touchfeature_prop:s0
+ro.vendor.touch.touchscheduler.enable  u:object_r:vendor_touchfeature_prop:s0
+ro.vendor.touch.touchflinger.enable    u:object_r:vendor_touchfeature_prop:s0
