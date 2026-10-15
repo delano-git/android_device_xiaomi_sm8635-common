@@ -2,8 +2,6 @@
 ## are from Xiaomi Pad 7 Pro (OS3.0.304.0.WOYMIXM).
 
 # ACDBs
-vendor/etc/acdbdata/cliffs_mtp/MTP_cliffs_acdb_cal.acdb
-vendor/etc/acdbdata/cliffs_mtp/MTP_cliffs_workspaceFileXml.qwsp
 vendor/etc/acdbdata/cliffs_mtp_wcd9395_cliffs7/MTP_cliffs7_wcd9395_acdb_cal.acdb
 vendor/etc/acdbdata/cliffs_mtp_wcd9395_cliffs7/MTP_cliffs7_wcd9395_workspaceFileXml.qwsp
 vendor/etc/acdbdata/cliffs_mtp_wsa883x_cliffs7/MTP_cliffs7_acdb_cal.acdb
