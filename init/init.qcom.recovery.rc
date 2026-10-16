@@ -37,3 +37,16 @@ on property:ro.boot.usbcontroller=*
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on init
+    # The touch controller reports in the panel's natural orientation
+    setprop ro.minui.default_touch_rotation ROTATION_RIGHT
+
+on boot
+    start recovery_touch_thp
+
+service recovery_touch_thp /system/bin/recovery_touch_thp
+    disabled
+    user root
+    group root input system
+    seclabel u:r:recovery:s0

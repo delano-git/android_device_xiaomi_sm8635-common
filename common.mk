@@ -188,6 +188,14 @@ PRODUCT_PACKAGES += \
     init.qcom.recovery.rc \
     init.sm8635.rc
 
+# Recovery touch
+PRODUCT_PACKAGES += \
+    recovery_touch_thp
+
+PRODUCT_COPY_FILES += \
+    $(foreach lib,libtensorflowlite_touch_c libtouchreport libtouchsensor, \
+        vendor/xiaomi/sm8635-common/proprietary/odm/lib64/$(lib).so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/$(lib).so)
+
 # IPA
 PRODUCT_PACKAGES += \
     ipacm \
