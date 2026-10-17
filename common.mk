@@ -29,6 +29,11 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc
 
+# ViPER4Android
+PRODUCT_PACKAGES += \
+    libv4a_re \
+    ViPER4AndroidFX
+
 # Audio
 PRODUCT_PACKAGES += \
     audioadsprpcd \

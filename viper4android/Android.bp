@@ -1,0 +1,59 @@
+//
+// ViPER4Android FX
+//
+// Prebuilt app and effect library from Evolution-X-Devices/packages_apps_ViPER4AndroidFX
+// (branch bka, commit ba9b1b0): ViPER4Android FX Redesign 8.0 and libv4a_re 0.6.3,
+// built by WSTxda (https://github.com/WSTxda/ViPERFX_RE).
+//
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+// Legacy effect library, registered through audio_effects.xml.
+cc_prebuilt_library_shared {
+    name: "libv4a_re",
+    installable: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["vendor/lib/soundfx/libv4a_re.so"],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+        android_arm64: {
+            srcs: ["vendor/lib64/soundfx/libv4a_re.so"],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    ignore_max_page_size: true,
+    compile_multilib: "both",
+    vendor: true,
+    relative_install_path: "soundfx",
+}
+
+// Presigned app; replaces the stock equalizers.
+android_app_import {
+    name: "ViPER4AndroidFX",
+    apk: "system/app/ViPER4AndroidFX/ViPER4AndroidFX.apk",
+    presigned: true,
+    preprocessed: true,
+    overrides: [
+        "AudioFX",
+        "AxionFx",
+    ],
+    dex_preopt: {
+        enabled: false,
+    },
+}
