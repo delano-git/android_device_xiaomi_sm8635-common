@@ -1,0 +1,79 @@
+//
+// ViPER4Android FX (ViPERFX_RE legacy effect driver)
+//
+// Sources: https://github.com/likelikeslike/ViPERFX_RE (src/)
+//          https://github.com/likelikeslike/ViPERDSP   (ViPERDSP/)
+//
+// Reverse-engineered code, personal use only. See ViPERDSP/README.md.
+//
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+cc_defaults {
+    name: "viper4android_defaults",
+    cflags: [
+        "-O3",
+        "-DNDEBUG",
+        "-Wno-unused-parameter",
+        "-Wno-unused-variable",
+        "-Wno-unused-function",
+    ],
+    cppflags: [
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    cpp_std: "c++17",
+}
+
+cc_library_static {
+    name: "libViPERDSP",
+    defaults: ["viper4android_defaults"],
+    vendor: true,
+    srcs: [
+        "ViPERDSP/viper/utils/pffft.c",
+        "ViPERDSP/viper/ViPER.cpp",
+        "ViPERDSP/viper/effects/*.cpp",
+        "ViPERDSP/viper/utils/*.cpp",
+    ],
+    export_include_dirs: [
+        "ViPERDSP",
+        "ViPERDSP/include",
+    ],
+    shared_libs: ["liblog"],
+}
+
+cc_library_shared {
+    name: "libv4a_re",
+    defaults: ["viper4android_defaults"],
+    vendor: true,
+    relative_install_path: "soundfx",
+    srcs: [
+        "src/ViPER4Android.cpp",
+        "src/ViperContext.cpp",
+    ],
+    local_include_dirs: [
+        "src",
+        "src/include",
+    ],
+    static_libs: ["libViPERDSP"],
+    shared_libs: ["liblog"],
+    visibility: ["//visibility:public"],
+}
+
+// Companion app: https://github.com/likelikeslike/ViPER4Android (release 2.1.1).
+// The Gradle/Compose project can't be built by Soong, so the release APK is
+// imported and signed with the platform key, which grants MODIFY_AUDIO_ROUTING.
+android_app_import {
+    name: "ViPER4Android",
+    apk: "app/ViPER4Android.apk",
+    certificate: "platform",
+    overrides: [
+        "AudioFX",
+        "AxionFx",
+    ],
+    dex_preopt: {
+        enabled: false,
+    },
+}
