@@ -8,6 +8,7 @@
 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,ucsi/typec/port0/data_role    u:object_r:vendor_sysfs_usb_supply:s0
 
 # Camera
+/dev/miev                                                 u:object_r:camera_device:s0
 /odm/bin/hw/vendor\.qti\.camera\.provider-service_64     u:object_r:hal_camera_default_exec:s0
 /mnt/vendor/persist/camera(/.*)?                         u:object_r:camera_persist_file:s0
 /odm/lib(64)?/libmialgo_utils\.so                        u:object_r:same_process_hal_file:s0
@@ -75,5 +76,11 @@
 /(odm|vendor/odm)/bin/touch_report_debug                             u:object_r:tp_report_debug_exec:s0
 /(odm|vendor/odm)/bin/toucheventcheck                                u:object_r:tpevent_exec:s0
 
+# Storage
+/dev/0:0:0:[0-9]+                                            u:object_r:vendor_bsg_device:s0
+
 # WLAN
 /data/vendor/wlan_logs(/.*)?    u:object_r:vendor_wifi_vendor_data_file:s0
+
+# Init scripts
+/(odm|vendor/odm)/bin/init\.mi\.serial\.sh                   u:object_r:vendor_qti_init_shell_exec:s0
