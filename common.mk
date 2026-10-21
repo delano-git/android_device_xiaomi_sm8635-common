@@ -29,6 +29,9 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc
 
+# ViPER4Android (packages/apps/ViPER4Android, from a local manifest)
+$(call inherit-product-if-exists, packages/apps/ViPER4Android/config.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     audioadsprpcd \
