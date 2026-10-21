@@ -2,7 +2,6 @@
     package="org.lineageos.settingsoverlay.xiaomi">
     <application android:hasCode="false" />
     <overlay android:isStatic="true"
-             android:priority="1"
-             android:targetPackage="com.android.settings"
-             android:targetName="XiaomiSettingsOverlay" />
+             android:priority="200"
+             android:targetPackage="com.android.settings" />
 </manifest>
