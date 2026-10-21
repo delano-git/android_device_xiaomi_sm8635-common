@@ -13,3 +13,5 @@ allow hal_aidl_dms_default vendor_dolby_file:dir rw_dir_perms;
 allow hal_aidl_dms_default vendor_dolby_file:file create_file_perms;
 
 set_prop(hal_aidl_dms_default, vendor_audio_prop)
+
+hal_client_domain(dumpstate, hal_aidl_dms)

@@ -13,6 +13,8 @@ allow hal_camera_default vendor_camera_data_file:sock_file create_file_perms;
 allow hal_camera_default { camera_device vendor_displayfeature_device }:chr_file rw_file_perms;
 allow hal_camera_default vendor_sysfs_camera:file write;
 
+dontaudit hal_camera_default shell_data_file:dir search;
+
 get_prop(hal_camera_default, exported_system_prop)
 set_prop(hal_camera_default, vendor_camera_p3enable_prop)
 set_prop(hal_camera_default, vendor_camera_xdrversion_prop)

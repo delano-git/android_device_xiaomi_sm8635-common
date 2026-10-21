@@ -4,4 +4,7 @@ init_daemon_domain(hal_hypsys_vendor)
 
 binder_use(hal_hypsys_vendor)
 
+allow hal_hypsys_vendor dumpstate:fd use;
+allow hal_hypsys_vendor dumpstate:fifo_file write;
+
 add_service(hal_hypsys_vendor, hal_hypsys_service)
