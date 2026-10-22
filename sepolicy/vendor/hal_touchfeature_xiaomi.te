@@ -6,7 +6,11 @@ init_daemon_domain(hal_touchfeature_xiaomi_default)
 
 hal_server_domain(hal_touchfeature_xiaomi_default, hal_touchfeature_xiaomi)
 
-hal_attribute_service(hal_touchfeature_xiaomi, hal_touchfeature_xiaomi_service)
+# hal_attribute_service() written out without its neverallow guards: the Lineage touch HAL
+# (high touch polling rate) is a client of this service and its domain is declared later
+# than this directory is parsed, so it cannot join the client attribute.
+allow hal_touchfeature_xiaomi_server hal_touchfeature_xiaomi_service:service_manager { add find };
+allow hal_touchfeature_xiaomi_client hal_touchfeature_xiaomi_service:service_manager find;
 
 allow hal_touchfeature_xiaomi_default init:unix_stream_socket connectto;
 allow hal_touchfeature_xiaomi_default input_device:chr_file rw_file_perms;

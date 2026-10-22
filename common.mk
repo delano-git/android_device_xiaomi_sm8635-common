@@ -220,6 +220,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.sm8635
 
+# Lineage Touch: high touch polling rate, through the Xiaomi touchfeature HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch-service.sm8635
+
 # Media
 PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/codec2/media_codecs_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_audio.xml \
