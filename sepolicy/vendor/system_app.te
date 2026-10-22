@@ -4,3 +4,6 @@ get_prop(system_app, vendor_audio_prop)
 
 # ZRAM
 r_dir_file(system_app, sysfs_zram)
+
+# Axion widgets look up the cgroup root
+allow system_app cgroup:dir search;

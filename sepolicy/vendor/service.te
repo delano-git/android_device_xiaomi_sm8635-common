@@ -24,3 +24,4 @@ type vendor_hal_citsensorservice_xiaomi_service, protected_service, service_mana
 
 # Touchfeature
 type hal_touchfeature_xiaomi_service, protected_service, service_manager_type, hal_service_type;
+type hal_intentaware_service, hal_service_type, service_manager_type;

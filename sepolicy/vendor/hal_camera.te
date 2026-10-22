@@ -3,6 +3,7 @@ hal_attribute_service(hal_camera, hal_aidlbgservice_service)
 hal_attribute_service(hal_camera, hal_camera_aon_service)
 hal_attribute_service(hal_camera, hal_dynamic_camera_service)
 hal_attribute_service(hal_camera, hal_quickcamera_service)
+hal_attribute_service(hal_camera, hal_intentaware_service)
 hal_attribute_service(hal_camera, hal_camera_service)
 
 allow hal_camera_default { proc_pressure_cpu proc_pressure_io proc_pressure_mem }:file r_file_perms;
@@ -23,3 +24,5 @@ r_dir_file(hal_camera_default, camera_persist_file)
 r_dir_file(hal_camera_default, mnt_vendor_file)
 r_dir_file(hal_camera_default, vendor_persist_sensors_file)
 rw_dir_file(hal_camera_default, vendor_sysfs_battery_supply)
+
+dontaudit hal_camera_default system_data_file:dir search;
