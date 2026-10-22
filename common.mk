@@ -224,6 +224,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch-service.sm8635
 
+# User-defined throttling curve, off until persist.sys.ax.thermal_curve is set to 1
+PRODUCT_PACKAGES += \
+    ax_thermal_curve.sh
+
 # Media
 PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/codec2/media_codecs_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_audio.xml \
