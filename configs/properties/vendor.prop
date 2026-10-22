@@ -252,3 +252,7 @@ vendor.usb.use_gadget_hal=1
 
 # WiFi
 wifi.aware.interface=wifi-aware0
+
+# Compose slower external displays (e.g. capture cards) on the GPU, so they
+# don't scan out app buffers that the faster built-in panel already released
+debug.sf.force_slower_follower_gpu_composition=true
