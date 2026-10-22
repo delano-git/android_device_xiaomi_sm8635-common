@@ -1,0 +1,21 @@
+//
+// SPDX-FileCopyrightText: 2026 rexilone (yupei), adapted for sm8635
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "vendor.lineage.health-service.sm8635",
+    init_rc: ["vendor.lineage.health-service.sm8635.rc"],
+    vintf_fragments: ["vendor.lineage.health-service.sm8635.xml"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: [
+        "ChargingControl.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "vendor.lineage.health-V2-ndk",
+    ],
+}

@@ -84,3 +84,6 @@
 
 # Init scripts
 /(odm|vendor/odm)/bin/init\.mi\.serial\.sh                   u:object_r:vendor_qti_init_shell_exec:s0
+
+# Charging control with bypass
+/vendor/bin/hw/vendor\.lineage\.health-service\.sm8635    u:object_r:hal_lineage_health_default_exec:s0
