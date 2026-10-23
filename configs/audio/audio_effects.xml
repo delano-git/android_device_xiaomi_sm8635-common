@@ -166,10 +166,10 @@
         <!--DOLBY END-->
     </effects>
     <postprocess>
-        <stream type="music">
-            <apply effect="music_helper"/>
-            <apply effect="dlb_music_listener"/>
-        </stream>
+        <!-- Nothing is applied to the music stream (music_helper, dlb_music_listener): enabling any session
+             effect suspends every global effect (AudioFlinger ThreadBase::checkSuspendOnEffectEnabled),
+             which kept ViPER4Android from processing. -->
+
         <stream type="ring">
             <apply effect="ring_helper"/>
             <apply effect="dlb_ring_listener"/>
