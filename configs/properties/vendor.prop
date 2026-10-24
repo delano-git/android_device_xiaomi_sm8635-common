@@ -49,11 +49,7 @@ vendor.audio.dolby.ds2.hardbypass=false
 
 # Bluetooth
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-lhdc
-# Software A2DP encoding by default (about 240 ms instead of about 430 ms with the offload path). Needs
-# audio_policy_configuration_a2dp_offload_disabled.xml. vendor.audio.feature.a2dp_offload.enable has to stay
-# true, since it is what registers the Bluetooth audio provider. This line is reapplied on every boot, so the
-# developer option cannot turn offload back on across a reboot.
-persist.bluetooth.a2dp_offload.disabled=true
+persist.bluetooth.a2dp_offload.disabled=false
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
